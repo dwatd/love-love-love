@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE</title>
+    <style>
+        body {
+        background-color: #FAF3F3;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 40px 20px;
+        text-align: center;
+        }
+
+        h1 {
+        font-size: 2.5rem;
+        color: #C94C4C;
+        margin-bottom: 20px;
+        }
+
+        #result {
+        font-size: 1.3rem;
+        color: #444;
+        margin-top: 20px;
+        }
+
+        button {
+        background-color: #C94C4C;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        }
+
+        button:hover {
+        background-color: #a53b3b;
+        }
+
+        button a {
+        color: white;
+        text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="index.html">Return</a></button>
+    <h1>Love Result</h1>
+    <p id="result"></p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const yourName = params.get('yourName');
+        const loverName = params.get('loverName');
+        const lovePercentage = params.get('lovePercentage');
+
+        document.getElementById('result').textContent = `${yourName} ❤️ ${loverName} = ${lovePercentage}% compatible!`;
+    </script>
+</body>
+</html>
